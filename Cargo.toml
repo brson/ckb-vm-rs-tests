@@ -1,5 +1,5 @@
 [package]
-name = "ckb-vm-tests"
+name = "ckb-vm-rs-tests"
 version = "0.1.0"
 edition = "2018"
 

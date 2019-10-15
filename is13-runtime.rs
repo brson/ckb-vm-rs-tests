@@ -1,10 +1,12 @@
 use bytes::Bytes;
 use std::io::Read;
+use std::env;
+use std::fs::File;
 
 fn main() {
-    let args: Vec<Bytes> = std::env::args().map(|a| a.into()).collect();
+    let args: Vec<Bytes> = env::args().map(|a| a.into()).collect();
 
-    let mut file = std::fs::File::open("examples/is13").unwrap();
+    let mut file = File::open("is13-client").expect("open is13-client");
     let mut buffer = Vec::new();
     file.read_to_end(&mut buffer).unwrap();
     let buffer = Bytes::from(buffer);
@@ -16,4 +18,3 @@ fn main() {
         _ => panic!(""),
     }
 }
-

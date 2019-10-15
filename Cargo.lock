@@ -42,7 +42,7 @@ name = "ckb-vm-definitions"
 version = "0.17.0"
 
 [[package]]
-name = "ckb-vm-tests"
+name = "ckb-vm-rs-tests"
 version = "0.1.0"
 dependencies = [
  "bytes 0.4.12 (registry+https://github.com/rust-lang/crates.io-index)",
