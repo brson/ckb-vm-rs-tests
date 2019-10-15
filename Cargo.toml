@@ -9,4 +9,5 @@ path = "is13-runtime.rs"
 
 [dependencies]
 ckb-vm = { path = "../ckb-vm" }
+b_error = { path = "../bloop/src/error" }
 bytes = "0.4.12"
