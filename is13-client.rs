@@ -17,6 +17,8 @@ fn panic(_: &PanicInfo) -> ! {
 }
 
 #[start]
-fn main(argc: isize, argv: *const *const u8) -> isize {
+#[no_mangle]
+pub fn _start(argc: isize, argv: *const *const u8) -> isize {
     return 0;
 }
+
