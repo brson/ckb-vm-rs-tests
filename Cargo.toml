@@ -1,0 +1,12 @@
+[package]
+name = "ckb-vm-tests"
+version = "0.1.0"
+edition = "2018"
+
+[[bin]]
+name = "is13-runtime"
+path = "is13-runtime.rs"
+
+[dependencies]
+ckb-vm = { path = "../ckb-vm" }
+bytes = "0.4.12"
