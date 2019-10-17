@@ -67,7 +67,7 @@ cargo run -- is13-client-rust 1
 Build syscall trampoline:
 
 ```
-~/riscv-gcc/bin/riscv32-unknown-elf-as ecall32.s -o ecall32.o
+~/riscv-gcc/bin/riscv32-unknown-elf-as -march=rv32imac ecall32.s -o ecall32.o
 ~/riscv-gcc/bin/riscv32-unknown-elf-ar -rsv libecall32.a ecall32.o
 ~/riscv-gcc/bin/riscv32-unknown-elf-objdump libecall32.a -d
 ```
@@ -76,4 +76,11 @@ Call `rustc` with syscalls:
 
 ```
 rustc +nightly is13-client.rs --target=riscv32imac-unknown-none-elf -o is13-client-rust --emit=link,asm -lstatic=ecall32 -Lnative=.
+```
+
+
+Dissassemble rust bin:
+
+```
+~/riscv-gcc/bin/riscv32-unknown-elf-objdump is13-client-rust -d > is13-client-rust-dis.s
 ```
