@@ -1,4 +1,4 @@
-#include <string.h>
+/*#include <string.h>
 
 int is13(char* data) {
     if (strcmp(data, "13") == 0) {
@@ -15,11 +15,13 @@ int is13(char* data) {
     }
     return 1;
 }
+*/
 
 int main(int argc, char* argv[]) {
-    if (argc == 1) {
+  /*if (argc == 1) {
         return 1;
     }
-    return is13(argv[1]);
+    return is13(argv[1]);*/
+  return 0;
 }
 
