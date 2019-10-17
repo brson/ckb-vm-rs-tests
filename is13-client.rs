@@ -1,10 +1,3 @@
-// Build with nightly:
-//
-//     rustup toolchain add nightly
-//     rustup target add riscv32imac-unknown-none-elf --toolchain=nightly
-//     rustc +nightly is13-client.rs --target=riscv32imac-unknown-none-elf
-
-
 #![allow(unused)]
 #![no_std]
 #![feature(start)]

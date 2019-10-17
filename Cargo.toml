@@ -11,3 +11,4 @@ path = "is13-runtime.rs"
 ckb-vm = { path = "../ckb-vm" }
 b_error = { path = "../bloop/src/error" }
 bytes = "0.4.12"
+structopt = "0.3.3"
