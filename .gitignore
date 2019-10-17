@@ -1,5 +1,6 @@
 target/
 ecall32.o
+libecall32.a
 is13-client-gcc
 is13-client-gcc-dis.s
 is13-client-gcc.s

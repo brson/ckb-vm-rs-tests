@@ -68,4 +68,12 @@ Build syscall trampoline:
 
 ```
 ~/riscv-gcc/bin/riscv32-unknown-elf-as ecall32.s -o ecall32.o
+~/riscv-gcc/bin/riscv32-unknown-elf-ar -rsv libecall32.a ecall32.o
+~/riscv-gcc/bin/riscv32-unknown-elf-objdump libecall32.a -d
+```
+
+Call `rustc` with syscalls:
+
+```
+rustc +nightly is13-client.rs --target=riscv32imac-unknown-none-elf -o is13-client-rust --emit=link,asm -lstatic=ecall32 -Lnative=.
 ```

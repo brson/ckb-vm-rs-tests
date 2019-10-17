@@ -12,13 +12,17 @@ fn panic(_: &PanicInfo) -> ! {
 #[start]
 #[no_mangle]
 pub fn _start(argc: isize, argv: *const *const u8) -> isize {
-    let _ = ecall0();
-    return 0;
+    unsafe {
+        let _ = ecall0(ECALL_EXIT);
+        return 0;
+    }
 }
 
 const ECALL_EXIT: usize = 97;
 
-#[link_name = "__ecall0"]
-extern "system" fn ecall0(
-    num: usize,
-) -> usize;
+extern "system" {
+    #[link_name = "__ecall0"]
+    fn ecall0(
+        num: usize,
+    ) -> usize;
+}
