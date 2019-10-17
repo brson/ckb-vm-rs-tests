@@ -60,3 +60,12 @@ Run:
 ```
 cargo run -- is13-client-rust 1
 ```
+
+
+## Syscalls
+
+Build syscall trampoline:
+
+```
+~/riscv-gcc/bin/riscv32-unknown-elf-as ecall32.s -o ecall32.o
+```

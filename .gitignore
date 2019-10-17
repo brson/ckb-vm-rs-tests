@@ -1,1 +1,7 @@
 target/
+ecall32.o
+is13-client-gcc
+is13-client-gcc-dis.s
+is13-client-gcc.s
+is13-client-rust
+is13-client-rust.s
