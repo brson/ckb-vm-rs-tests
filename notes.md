@@ -22,6 +22,12 @@ Emit assembly with gcc:
 ~/riscv-gcc/bin/riscv32-unknown-elf-gcc is13-client.c -S -o is13-client-gcc.s
 ```
 
+Disassemble:
+
+```
+~/riscv-gcc/bin/riscv32-unknown-elf-objdump is13-client-gcc -d
+```
+
 ## Rust
 
 Installing:
