@@ -35,14 +35,17 @@ fn run() -> BResult<()> {
     Ok(())
 }
 
-use ckb_vm::{Register, Memory, TraceMachine, DefaultMachine, DefaultCoreMachine, WXorXMemory};
+use ckb_vm::{Register, Memory, TraceMachine, DefaultMachine, DefaultCoreMachine, WXorXMemory, DefaultMachineBuilder};
 
 pub fn run_vm<R: Register, M: Memory<R> + Default>(
     program: &Bytes,
     args: &[Bytes],
 ) -> BResult<i8> {
-    let mut machine =
-        TraceMachine::new(DefaultMachine::<DefaultCoreMachine<R, WXorXMemory<R, M>>>::default());
+    let core_machine = DefaultCoreMachine::<R, WXorXMemory<R, M>>::default();
+    let builder = DefaultMachineBuilder::new(core_machine);
+    let mut machine = builder.build();
+    //let mut machine =
+    //    TraceMachine::new(DefaultMachine::<DefaultCoreMachine<R, WXorXMemory<R, M>>>::default());
     machine.load_program(program, args).e()?;
     Ok(machine.run().e()?)
 }
